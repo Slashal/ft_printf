@@ -6,17 +6,17 @@
 /*   By: hguesne <hguesne@student.42lehavre.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/28 09:51:03 by hguesne           #+#    #+#             */
-/*   Updated: 2025/10/28 18:43:05 by hguesne          ###   ########.fr       */
+/*   Updated: 2025/10/29 14:52:56 by hguesne          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_printf (const char *format, ...)
+int	ft_printf(const char *format, ...)
 {
 	va_list	param;
-	size_t len_str;
-	size_t i;
+	size_t	len_str;
+	size_t	i;
 
 	va_start (param, format);
 	len_str = 0;
@@ -25,53 +25,90 @@ int	ft_printf (const char *format, ...)
 	{
 		if (format[i] == '%')
 		{
-			len_str = check_flag(param, format[++i],len_str);
+			len_str = check_flag(param, format[++i], len_str);
 			i++;
 		}
-		else 
+		else
 			len_str = flag_char(format[i++], len_str);
 	}
 	va_end(param);
 	return (len_str);
 }
 
-int main()
-{
-	void	*a = "Hello";
-	int		i = 0;
+// int main()
+// {
+// 	char *a = "Pointer";
+// 	int		size = 0;
 
-	printf("------test de toutes les fonctions---------\n\n");
+// 	printf("________________________all flags___________________________\n\n");
+// 	ft_printf("		         %%c");
+// 	size = ft_printf("\n %c\n", 'a');
+// 	ft_printf("[%d] : Size ft_printf\n", size);
+// 	size = printf("\n %c\n", 'a');
+// 	ft_printf("[%d] : Size printf\n", size);
 
-	ft_printf("------test de %%c avec ma fonction-------\n%c\n", 'a');
-	printf("------test de %%c avec la fonction printf-----\n%c\n\n", 'a');
-	
-	ft_printf("------test de %%s avec ma fonction-------\n%s\n", "Hello World !");
-	printf("------test de %%s avec la fonction printf-----\n%s\n\n", "Hello World !");
+// 	ft_printf("_________________________________________________________\n\n");
+// 	ft_printf("		         %%s");
+// 	size = ft_printf("\n %s\n", "Hello World !");
+// 	ft_printf("[%d] : Size ft_printf\n", size);
+// 	size = printf("\n %s\n", "Hello World !");
+// 	ft_printf("[%d] : Size printf\n", size);
 
-	ft_printf("------test de %%p avec ma fonction-------\n%p\n", a);
-	printf("------test de %%p avec la fonction printf-----\n%p\n\n", a);
+// 	ft_printf("_________________________________________________________\n\n");
+// 	ft_printf("		         %%p");
+// 	size = ft_printf("\n %p\n", a);
+// 	ft_printf("[%d] : Size ft_printf\n", size);
+// 	size = printf("\n %p\n", a);
+// 	ft_printf("[%d] : Size printf\n", size);
 
-	ft_printf("------test de %%d avec ma fonction-------\n%d\n", 42);
-	printf("------test de %%d avec la fonction printf-----\n%d\n\n", 42);
+// 	ft_printf("_________________________________________________________\n\n");
+// 	ft_printf("		         %%d");
+// 	size = ft_printf("\n %d\n", 42);
+// 	ft_printf("[%d] : Size ft_printf\n", size);
+// 	size = printf("\n %d\n", 42);
+// 	ft_printf("[%d] : Size printf\n", size);
 
-	ft_printf("------test de %%i avec ma fonction-------\n%i\n", 42);
-	printf("------test de %%i avec la fonction printf-----\n%i\n\n", 42);
+// 	ft_printf("_________________________________________________________\n\n");
+// 	ft_printf("		         %%i");
+// 	size = ft_printf("\n %i\n", 42);
+// 	ft_printf("[%d] : Size ft_printf\n", size);
+// 	size = printf("\n %i\n", 42);
+// 	ft_printf("[%d] : Size printf\n", size);
 
-	ft_printf("------test de %%u avec ma fonction-------\n%u\n", 42);
-	printf("------test de %%u avec la fonction printf-----\n%u\n\n", 42);
+// 	ft_printf("_________________________________________________________\n\n");
+// 	ft_printf("		         %%u");
+// 	size = ft_printf("\n %u\n", 42);
+// 	ft_printf("[%d] : Size ft_printf\n", size);
+// 	size = printf("\n %u\n", 42);
+// 	ft_printf("[%d] : Size printf\n", size);
 
-	ft_printf("------test de %%x avec ma fonction-------\n%x\n", 42);
-	printf("------test de %%x avec la fonction printf-----\n%x\n\n", 42);
+// 	ft_printf("_________________________________________________________\n\n");
+// 	ft_printf("		         %%x");
+// 	size = ft_printf("\n %x\n", 42);
+// 	ft_printf("[%d] : Size ft_printf\n", size);
+// 	size = printf("\n %x\n", 42);
+// 	ft_printf("[%d] : Size printf\n", size);
 
-	ft_printf("------test de %%X avec ma fonction-------\n%X\n", 42);
-	printf("------test de %%X avec la fonction printf-----\n%X\n\n", 42);
+// 	ft_printf("_________________________________________________________\n\n");
+// 	ft_printf("		         %%X");
+// 	size = ft_printf("\n %X\n", 42);
+// 	ft_printf("[%d] : Size ft_printf\n", size);
+// 	size = printf("\n %X\n", 42);
+// 	ft_printf("[%d] : Size printf\n", size);
 
-	ft_printf("------test de %% avec ma fonction-------\n%%\n");
-	printf("------test de %% avec la fonction printf-----\n%%\n\n");
+// 	ft_printf("_________________________________________________________\n\n");
+// 	ft_printf("		         %%%%");
+// 	size = ft_printf("\n %%\n");
+// 	ft_printf("[%d] : Size ft_printf\n", size);
+// 	size = printf("\n %%\n");
+// 	ft_printf("[%d] : Size printf\n", size);
+// }
 
-
-	i = ft_printf("------test de ce que retourne la fonction-----\n%c\n", 'a');
-	ft_printf("-------ce que retourne ma fonction------ \n [%d]\n", i);
-	i = printf("------test de ce que retourne la fonction-----\n%c\n", 'a');
-	printf("-------ce que retourne la fonction prinft------ \n [%d]\n", i);
-}
+// int	main()
+// {
+// 	int size;
+// 	size = ft_printf("NULL %s NULL\n", NULL);
+// 	ft_printf("%d\n", size);
+// 	size = printf("NULL %s NULL\n", NULL);
+// 	ft_printf("%d\n", size);
+// }

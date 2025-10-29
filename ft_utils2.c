@@ -6,7 +6,7 @@
 /*   By: hguesne <hguesne@student.42lehavre.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/28 17:59:21 by hguesne           #+#    #+#             */
-/*   Updated: 2025/10/28 18:41:48 by hguesne          ###   ########.fr       */
+/*   Updated: 2025/10/29 12:49:52 by hguesne          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 size_t	flag_hexa_up(unsigned int i, size_t len_str)
 {
 	ft_putnbr_base_up_fd(i, 1);
-	while (i > 16)
+	while (i >= 16)
 	{
 		i /= 16;
 		len_str++;
@@ -26,18 +26,20 @@ size_t	flag_hexa_up(unsigned int i, size_t len_str)
 size_t	flag_hexa_low(unsigned int i, size_t len_str)
 {
 	ft_putnbr_base_low_fd(i, 1);
-	while (i > 16)
+	while (i >= 16)
 	{
 		i /= 16;
 		len_str++;
 	}
 	return (++len_str);
 }
+
 size_t	flag_percent(size_t len_str)
 {
 	ft_putchar_fd('%', 1);
 	return (++len_str);
 }
+
 size_t	check_flag(va_list param, char c, size_t len_str)
 {
 	if (c == 'd' || c == 'i')
@@ -47,7 +49,7 @@ size_t	check_flag(va_list param, char c, size_t len_str)
 	if (c == 'c')
 		len_str = flag_char(va_arg(param, int), len_str);
 	if (c == 'p')
-		len_str = flag_point(va_arg(param, int), len_str);
+		len_str = flag_point(va_arg(param, void *), len_str);
 	if (c == 'u')
 		len_str = flag_unsigned(va_arg(param, unsigned int), len_str);
 	if (c == 'x')
@@ -58,4 +60,3 @@ size_t	check_flag(va_list param, char c, size_t len_str)
 		len_str = flag_percent(len_str);
 	return (len_str);
 }
-

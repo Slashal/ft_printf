@@ -11,20 +11,10 @@ LIB_SRCS_BONUS = ft_lstadd_front_bonus.c ft_lstnew_bonus.c ft_lstsize_bonus.c ft
 
 LIB_OBJS_BONUS = $(LIB_SRCS_BONUS:.c=.o)
 
-all: art $(NAME)
+all: $(NAME)
 
 $(NAME): $(LIB_OBJS)
 	ar rc $(NAME) $(LIB_OBJS)
-
-bonus:	art $(LIB_OBJS) $(LIB_OBJS_BONUS)
-			ar rcs $(NAME) $(LIB_OBJS) $(LIB_OBJS_BONUS)
-clean: art
-	$(RM) $(LIB_OBJS) $(LIB_OBJS_BONUS)
-fclean: art clean
-	$(RM) $(NAME)
-re: art fclean all
-
-art : 
 	@echo "██╗     ██╗██████╗ ███████╗████████╗"
 	@echo "██║     ██║██╔══██╗██╔════╝╚══██╔══╝"
 	@echo "██║     ██║██████╔╝█████╗     ██║   "   
@@ -32,3 +22,11 @@ art :
 	@echo "███████╗██║██████╔╝██║        ██║   "
 	@echo "╚══════╝╚═╝╚═════╝ ╚═╝        ╚═╝   "   
                                                   
+bonus: $(LIB_OBJS) $(LIB_OBJS_BONUS)
+			ar rcs $(NAME) $(LIB_OBJS) $(LIB_OBJS_BONUS)
+clean:
+	$(RM) $(LIB_OBJS) $(LIB_OBJS_BONUS)
+fclean: clean
+	$(RM) $(NAME)
+re: fclean all
+
