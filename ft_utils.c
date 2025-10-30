@@ -6,7 +6,7 @@
 /*   By: hguesne <hguesne@student.42lehavre.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/28 17:30:14 by hguesne           #+#    #+#             */
-/*   Updated: 2025/10/29 14:33:58 by hguesne          ###   ########.fr       */
+/*   Updated: 2025/10/30 10:00:39 by hguesne          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ size_t	flag_point(void *ptr, size_t len_str)
 
 size_t	flag_unsigned(unsigned int i, size_t len_str)
 {
-	ft_putnbr_u_fd(i, 1);
+	ft_putnbr_base(i, 1, "0123456789");
 	while (i > 9)
 	{
 		i /= 10;

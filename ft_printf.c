@@ -6,7 +6,7 @@
 /*   By: hguesne <hguesne@student.42lehavre.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/28 09:51:03 by hguesne           #+#    #+#             */
-/*   Updated: 2025/10/29 14:52:56 by hguesne          ###   ########.fr       */
+/*   Updated: 2025/10/30 10:02:55 by hguesne          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,8 +107,8 @@ int	ft_printf(const char *format, ...)
 // int	main()
 // {
 // 	int size;
-// 	size = ft_printf("NULL %s NULL\n", NULL);
+// 	size = ft_printf("NULL %x NULL\n", -2147483648);
 // 	ft_printf("%d\n", size);
-// 	size = printf("NULL %s NULL\n", NULL);
+// 	size = printf("NULL %x NULL\n", -2147483648);
 // 	ft_printf("%d\n", size);
 // }

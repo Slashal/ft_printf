@@ -6,7 +6,7 @@
 /*   By: hguesne <hguesne@student.42lehavre.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/28 17:59:21 by hguesne           #+#    #+#             */
-/*   Updated: 2025/10/29 12:49:52 by hguesne          ###   ########.fr       */
+/*   Updated: 2025/10/30 09:57:55 by hguesne          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 size_t	flag_hexa_up(unsigned int i, size_t len_str)
 {
-	ft_putnbr_base_up_fd(i, 1);
+	ft_putnbr_base(i, 1, "0123456789ABCDEF");
 	while (i >= 16)
 	{
 		i /= 16;
@@ -25,7 +25,7 @@ size_t	flag_hexa_up(unsigned int i, size_t len_str)
 
 size_t	flag_hexa_low(unsigned int i, size_t len_str)
 {
-	ft_putnbr_base_low_fd(i, 1);
+	ft_putnbr_base(i, 1, "0123456789abcdef");
 	while (i >= 16)
 	{
 		i /= 16;
@@ -53,7 +53,7 @@ size_t	check_flag(va_list param, char c, size_t len_str)
 	if (c == 'u')
 		len_str = flag_unsigned(va_arg(param, unsigned int), len_str);
 	if (c == 'x')
-		len_str = flag_hexa_low(va_arg(param, int), len_str);
+		len_str = flag_hexa_low(va_arg(param, unsigned int), len_str);
 	if (c == 'X')
 		len_str = flag_hexa_up(va_arg(param, unsigned int), len_str);
 	if (c == '%')
