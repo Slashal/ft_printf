@@ -6,7 +6,7 @@
 /*   By: hguesne <hguesne@student.42lehavre.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/28 09:51:03 by hguesne           #+#    #+#             */
-/*   Updated: 2025/10/30 10:02:55 by hguesne          ###   ########.fr       */
+/*   Updated: 2025/11/03 14:54:32 by hguesne          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,80 +35,80 @@ int	ft_printf(const char *format, ...)
 	return (len_str);
 }
 
-// int main()
-// {
-// 	char *a = "Pointer";
-// 	int		size = 0;
+int main()
+{
+	char *a = "Pointer";
+	int		size = 0;
 
-// 	printf("________________________all flags___________________________\n\n");
-// 	ft_printf("		         %%c");
-// 	size = ft_printf("\n %c\n", 'a');
-// 	ft_printf("[%d] : Size ft_printf\n", size);
-// 	size = printf("\n %c\n", 'a');
-// 	ft_printf("[%d] : Size printf\n", size);
+	printf("________________________all flags___________________________\n\n");
+	ft_printf("		         %%c");
+	size = ft_printf("\n %c\n", 'a');
+	ft_printf("[%d] : Size ft_printf\n", size);
+	size = printf("\n %c\n", 'a');
+	ft_printf("[%d] : Size printf\n", size);
 
-// 	ft_printf("_________________________________________________________\n\n");
-// 	ft_printf("		         %%s");
-// 	size = ft_printf("\n %s\n", "Hello World !");
-// 	ft_printf("[%d] : Size ft_printf\n", size);
-// 	size = printf("\n %s\n", "Hello World !");
-// 	ft_printf("[%d] : Size printf\n", size);
+	ft_printf("_________________________________________________________\n\n");
+	ft_printf("		         %%s");
+	size = ft_printf("\n %s\n", "Hello World !");
+	ft_printf("[%d] : Size ft_printf\n", size);
+	size = printf("\n %s\n", "Hello World !");
+	ft_printf("[%d] : Size printf\n", size);
 
-// 	ft_printf("_________________________________________________________\n\n");
-// 	ft_printf("		         %%p");
-// 	size = ft_printf("\n %p\n", a);
-// 	ft_printf("[%d] : Size ft_printf\n", size);
-// 	size = printf("\n %p\n", a);
-// 	ft_printf("[%d] : Size printf\n", size);
+	ft_printf("_________________________________________________________\n\n");
+	ft_printf("		         %%p");
+	size = ft_printf("\n %p\n", a);
+	ft_printf("[%d] : Size ft_printf\n", size);
+	size = printf("\n %p\n", a);
+	ft_printf("[%d] : Size printf\n", size);
 
-// 	ft_printf("_________________________________________________________\n\n");
-// 	ft_printf("		         %%d");
-// 	size = ft_printf("\n %d\n", 42);
-// 	ft_printf("[%d] : Size ft_printf\n", size);
-// 	size = printf("\n %d\n", 42);
-// 	ft_printf("[%d] : Size printf\n", size);
+	ft_printf("_________________________________________________________\n\n");
+	ft_printf("		         %%d");
+	size = ft_printf("\n %d\n", 42);
+	ft_printf("[%d] : Size ft_printf\n", size);
+	size = printf("\n %d\n", 42);
+	ft_printf("[%d] : Size printf\n", size);
 
-// 	ft_printf("_________________________________________________________\n\n");
-// 	ft_printf("		         %%i");
-// 	size = ft_printf("\n %i\n", 42);
-// 	ft_printf("[%d] : Size ft_printf\n", size);
-// 	size = printf("\n %i\n", 42);
-// 	ft_printf("[%d] : Size printf\n", size);
+	ft_printf("_________________________________________________________\n\n");
+	ft_printf("		         %%i");
+	size = ft_printf("\n %i\n", 42);
+	ft_printf("[%d] : Size ft_printf\n", size);
+	size = printf("\n %i\n", 42);
+	ft_printf("[%d] : Size printf\n", size);
 
-// 	ft_printf("_________________________________________________________\n\n");
-// 	ft_printf("		         %%u");
-// 	size = ft_printf("\n %u\n", 42);
-// 	ft_printf("[%d] : Size ft_printf\n", size);
-// 	size = printf("\n %u\n", 42);
-// 	ft_printf("[%d] : Size printf\n", size);
+	ft_printf("_________________________________________________________\n\n");
+	ft_printf("		         %%u");
+	size = ft_printf("\n %u\n", 42);
+	ft_printf("[%d] : Size ft_printf\n", size);
+	size = printf("\n %u\n", 42);
+	ft_printf("[%d] : Size printf\n", size);
 
-// 	ft_printf("_________________________________________________________\n\n");
-// 	ft_printf("		         %%x");
-// 	size = ft_printf("\n %x\n", 42);
-// 	ft_printf("[%d] : Size ft_printf\n", size);
-// 	size = printf("\n %x\n", 42);
-// 	ft_printf("[%d] : Size printf\n", size);
+	ft_printf("_________________________________________________________\n\n");
+	ft_printf("		         %%x");
+	size = ft_printf("\n %x\n", 42);
+	ft_printf("[%d] : Size ft_printf\n", size);
+	size = printf("\n %x\n", 42);
+	ft_printf("[%d] : Size printf\n", size);
 
-// 	ft_printf("_________________________________________________________\n\n");
-// 	ft_printf("		         %%X");
-// 	size = ft_printf("\n %X\n", 42);
-// 	ft_printf("[%d] : Size ft_printf\n", size);
-// 	size = printf("\n %X\n", 42);
-// 	ft_printf("[%d] : Size printf\n", size);
+	ft_printf("_________________________________________________________\n\n");
+	ft_printf("		         %%X");
+	size = ft_printf("\n %X\n", 42);
+	ft_printf("[%d] : Size ft_printf\n", size);
+	size = printf("\n %X\n", 42);
+	ft_printf("[%d] : Size printf\n", size);
 
-// 	ft_printf("_________________________________________________________\n\n");
-// 	ft_printf("		         %%%%");
-// 	size = ft_printf("\n %%\n");
-// 	ft_printf("[%d] : Size ft_printf\n", size);
-// 	size = printf("\n %%\n");
-// 	ft_printf("[%d] : Size printf\n", size);
-// }
+	ft_printf("_________________________________________________________\n\n");
+	ft_printf("		         %%%%");
+	size = ft_printf("\n %%\n");
+	ft_printf("[%d] : Size ft_printf\n", size);
+	size = printf("\n %%\n");
+	ft_printf("[%d] : Size printf\n", size);
+}
 
-// int	main()
-// {
-// 	int size;
-// 	size = ft_printf("NULL %x NULL\n", -2147483648);
-// 	ft_printf("%d\n", size);
-// 	size = printf("NULL %x NULL\n", -2147483648);
-// 	ft_printf("%d\n", size);
-// }
+int	main()
+{
+	int size;
+	size = ft_printf("NULL %x NULL\n", -2147483648);
+	ft_printf("%d\n", size);
+	size = printf("NULL %x NULL\n", -2147483648);
+	ft_printf("%d\n", size);
+}
